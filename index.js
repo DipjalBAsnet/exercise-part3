@@ -22,15 +22,6 @@ app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.static("build"));
 
-if (process.argv.length < 3) {
-  console.log("give pass as arguement");
-  process.exit(1);
-}
-
-app.get("/", (req, res) => {
-  res.send("<h1>Hello World!</h1>");
-});
-
 app.get("/api/notes", (req, res) => {
   Note.find({}).then((notes) => {
     res.json(notes);
