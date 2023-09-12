@@ -1,8 +1,8 @@
-POST http://localhost:3001/api/users
+POST http://localhost:3001/api/notes
 Content-Type: application/json
  
- {
-    "username": "root",
-    "name": "Superuser",
-    "password": "salainen"
-} 
+{ 
+    "content": "checking the note creator",
+    "important": true,
+    "userId": "64ff04a149b90775a64d19b3"
+ }
