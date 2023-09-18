@@ -2,6 +2,7 @@ const notesRouter = require("express").Router();
 const Note = require("../models/note");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
+const logger = require("../utils/logger");
 
 notesRouter.get("/", async (request, response) => {
   const notes = await Note.find({});
@@ -30,6 +31,7 @@ const getTokenFrom = (request) => {
 
 notesRouter.post("/", async (request, response) => {
   const body = request.body;
+  console.log(body);
 
   const decodedToken = jwt.verify(getTokenFrom(request), process.env.SECRET);
 
@@ -47,6 +49,7 @@ notesRouter.post("/", async (request, response) => {
   });
 
   const savedNote = await note.save();
+  logger.info("saved!!");
   user.notes = user.notes.concat(savedNote._id);
   await user.save();
   response.status(201).json(savedNote);
