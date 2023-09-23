@@ -1,1 +1,8 @@
-go to postmans
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1c2hhbCIsImlkIjoiNjUwOTZlZGUyMTI2MzQ5ZDIwZjIyN2Q5IiwiaWF0IjoxNjk1MTE3MDQ1LCJleHAiOjE2OTUxMjA2NDV9.rQG34noV55sDRj88-OVLUK1QiP4j4Z7nnyl2t8Vp8w0
+
+{
+    "content": "i am a don of bhangbari",
+    "important": true
+}
